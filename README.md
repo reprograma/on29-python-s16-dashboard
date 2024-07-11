@@ -25,7 +25,7 @@ O que veremos na aula de hoje?
 
 
 
-![O Quadrante Mágico para plataformas de análise e inteligência de negócios mostra 20 fornecedores posicionados nos quadrantes de Líderes, Desafiantes, Visionários ou Players de Nicho, conforme junho de 2024. Os fornecedores são avaliados com base na capacidade de execução e na completude da visão, para ajudar a guiar decisões de investimento.]("assets/Figure_1_Magic_Quadrant_for_Analytics_and_Business_Intelligence_Platforms "Figura 1")
+![O Quadrante Mágico para plataformas de análise e inteligência de negócios mostra 20 fornecedores posicionados nos quadrantes de Líderes, Desafiantes, Visionários ou Players de Nicho, conforme junho de 2024. Os fornecedores são avaliados com base na capacidade de execução e na completude da visão, para ajudar a guiar decisões de investimento.]("https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/Figure_1_Magic_Quadrant_for_Analytics_and_Business_Intelligence_Platforms.png "Figura 1")
 
 *Figura 1: Quadrante Mágico para Plataformas de Análise e Inteligência de Negócios, junho de 2024 (Gartner). Fonte: [https://www.gartner.com/doc/reprints?id=1-2HW1JC8Q&ct=240620&st=sb](https://www.gartner.com/doc/reprints?id=1-2HW1JC8Q&ct=240620&st=sb)*
 
