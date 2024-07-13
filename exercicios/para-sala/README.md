@@ -182,15 +182,15 @@ Clique em cada um dos mapas e faça o seguinte processo, como ilustrado em cada 
 
 ### Mapa Cidade
 O item selecionado deverá ser Cidade (ou o nome da planilha dado por você) e o campo corresponde a ser utilizado na visibilidade é **Visibilidade Cidade**
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-23-visibilidade-cidade.png" Figura 23")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-23-visibilidade-cidade.png "Figura 23")
 
 ### Mapa Estado
 O item selecionado deverá ser Estado (ou o nome da planilha dado por você) e o campo corresponde a ser utilizado na visibilidade é **Visibilidade Estado**
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-24-visibilidade-estado.png" Figura 24")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-24-visibilidade-estado.png "Figura 24")
 
 ### Mapa País
 O item selecionado deverá ser País (ou o nome da planilha dado por você) e o campo corresponde a ser utilizado na visibilidade é **Visibilidade País**
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-25-visibilidade-pais.png" Figura 25")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-25-visibilidade-pais.png "Figura 25")
 
 
 ### Filtros na Planilha Cidade e Formatação de Título
@@ -204,7 +204,7 @@ Selecione *Editar Título* e usando o menu de seleção **Inserir** adicione o c
 
 `<Nome da planilha> | <Parâmetros.Parâmetro Estado Selecionado>`
 
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-26-parametro-titulo.png" Figura 26")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-26-parametro-titulo.png "Figura 26")
 
 E clique em OK
 
