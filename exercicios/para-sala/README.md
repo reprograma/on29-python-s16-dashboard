@@ -179,7 +179,9 @@ Arraste o campo **Filtro Estado** para *Filtros* e deixe marcada apenas a opçã
 
 #### Título
 Selecione *Editar Título* e deixe da seguinte maneira:
+
 `<Nome da planilha> | <Parâmetros.Parâmetro Estado Selecionado>`
+
 E clique em OK
 
 Volte para o Dashboard e divirta-se.
