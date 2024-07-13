@@ -158,16 +158,16 @@ No menu superior, selecione *Painel > Ações*. Clique em *Adicionar ação* no 
 ![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-17-acao-parametro.png "Figura 17")
 
 #### Alterar Parâmetro de País
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-pais.png.png "Figura 18")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-pais.png "Figura 18")
 
 #### Alterar Parâmetro de Estado
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-estado.png.png "Figura 19")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-estado.png "Figura 19")
 
 #### Alterar Parâmetro de Cidade
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-cidade.png.png "Figura 20")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-cidade.png "Figura 20")
 
 #### Alterar Estado Selecionado
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-estado-selecionado.png.png "Figura 22")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-estado-selecionado.png "Figura 21")
 
 Clique em OK para salvar.
 
