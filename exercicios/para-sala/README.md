@@ -124,25 +124,25 @@ Aparecerá um novo painel chamado parâmetros no canto inferior esquerdo. Dupliq
 Vamos criar quatro campos calculados (Análise > Criar campo calculado...), cada qual com a seguintes fórmulas:
 
 #### Visibilidade País
-`[Customer City]!=''
+`[Parâmetro Cidade]!=''
 AND
-[Estado]=''
+[Parâmetro Estado]=''
 AND
-[País]=''`
+[Parâmetro País]=''`
 
 #### Visibilidade Estado
-`[Customer City]=''
+`[Parâmetro Cidade]=''
 AND
-[Estado]=''
+[Parâmetro Estado]=''
 AND
-[País]!=''`
+[Parâmetro País]!=''`
 
 #### Visibilidade Cidade
-`[Customer City]=''
+`[Parâmetro Cidade]=''
 AND
-[Estado]!=''
+[Parâmetro Estado]!=''
 AND
-[País]=''`
+[Parâmetro País]=''`
 
 #### Filtro Estado
 `[Estado]=[Parâmetro Estado Selecionado]`
@@ -158,18 +158,40 @@ No menu superior, selecione *Painel > Ações*. Clique em *Adicionar ação* no 
 ![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-17-acao-parametro.png "Figura 17")
 
 #### Alterar Parâmetro de País
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-pais.png "Figura 18")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/parametro-pais.png "Figura 18")
 
 #### Alterar Parâmetro de Estado
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-estado.png "Figura 19")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/parametro-estado.png "Figura 19")
 
 #### Alterar Parâmetro de Cidade
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-cidade.png "Figura 20")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/parametro-cidade.png "Figura 20")
 
 #### Alterar Estado Selecionado
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-estado-selecionado.png "Figura 21")
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/parametro-estado-selecionado.png "Figura 21")
 
 Clique em OK para salvar.
+
+### Exibição de campos de de parâmetros
+Em qualquer um dos três mapas do dashboard, selecione a setinha de mais opções, como na imagem abaixo, e adicione os quatro parâmetros para serem exibidos como campo de texto na parte lateral
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-22-adicionar-parametros.png "Figura 22")
+
+### Exibição de Mapas dados aos parâmetros selecionados
+⚠️ Antes de mais nada, clique em alguma cidade do mapa cidade e garanta que o parâmetro **Parâmetro Cidade** esteja preenchido, isso garante que as regras de exibição sempre serão satisfeitas.
+
+Clique em cada um dos mapas e faça o seguinte processo, como ilustrado em cada imagem respectiva. No painel à esquerda clique em Layout, certifique-se do campo abaixo de item selecionado corresponde ao desejado, deixe marcado **Controlar a visibilidade usando valor** e selecione o campo correspondente ao item selecionado
+
+### Mapa Cidade
+O item selecionado deverá ser Cidade (ou o nome da planilha dado por você) e o campo corresponde a ser utilizado na visibilidade é **Visibilidade Cidade**
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-23-visibilidade-cidade.png" Figura 23")
+
+### Mapa Estado
+O item selecionado deverá ser Estado (ou o nome da planilha dado por você) e o campo corresponde a ser utilizado na visibilidade é **Visibilidade Estado**
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-24-visibilidade-estado.png" Figura 24")
+
+### Mapa País
+O item selecionado deverá ser País (ou o nome da planilha dado por você) e o campo corresponde a ser utilizado na visibilidade é **Visibilidade País**
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-25-visibilidade-pais.png" Figura 25")
+
 
 ### Filtros na Planilha Cidade e Formatação de Título
 Volte para planilha de Cidade e realize as seguintes ações
@@ -178,9 +200,11 @@ Volte para planilha de Cidade e realize as seguintes ações
 Arraste o campo **Filtro Estado** para *Filtros* e deixe marcada apenas a opção **Verdadeiro**
 
 #### Título
-Selecione *Editar Título* e deixe da seguinte maneira:
+Selecione *Editar Título* e usando o menu de seleção **Inserir** adicione o campo de parâmetro de estado selecionado. O código ficaria algo como:
 
 `<Nome da planilha> | <Parâmetros.Parâmetro Estado Selecionado>`
+
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-26-parametro-titulo.png" Figura 26")
 
 E clique em OK
 
