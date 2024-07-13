@@ -124,28 +124,28 @@ Aparecerá um novo painel chamado parâmetros no canto inferior esquerdo. Dupliq
 Vamos criar quatro campos calculados (Análise > Criar campo calculado...), cada qual com a seguintes fórmulas:
 
 #### Visibilidade País
-`\[Customer City\]!=''
+`[Customer City]!=''
 AND
-\[Estado\]=''
+[Estado]=''
 AND
-\[País\]=''`
+[País]=''`
 
 #### Visibilidade Estado
-`\[Customer City\]=''
+`[Customer City]=''
 AND
-\[Estado\]=''
+[Estado]=''
 AND
-\[País\]!=''`
+[País]!=''`
 
 #### Visibilidade Cidade
-`\[Customer City\]=''
+`[Customer City]=''
 AND
-\[Estado\]!=''
+[Estado]!=''
 AND
-\[País\]=''`
+[País]=''`
 
 #### Filtro Estado
-`\[Estado\]=\[Parâmetro Estado Selecionado\]`
+`[Estado]=[Parâmetro Estado Selecionado]`
 
 ## Dashboard
 Criaremos nosso painel, ou dashboard, dê o nome que preferir. Arraste um **Contêiner vertical** para a área principal como na imagem abaixo.
