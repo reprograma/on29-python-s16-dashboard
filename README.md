@@ -522,6 +522,7 @@ Para analistas de dados, a conformidade com a LGPD envolve garantir que as visua
 - [Trilha de storytelling com Tableau (inglês)](https://trailhead.salesforce.com/content/learn/modules/data-storytelling-tableau-public?utm_campaign=trailblazer_blog&utm_content=careers_feb24_data-skills&utm_medium=blog-360&utm_source=salesforce)
 - [Guia de visualização de dados](https://www.tableau.com/pt-br/learn/articles/data-visualization)
 - [Dicas de como criar um bom dashboard](https://www.dashboarddesign.com.br/a-importancia-de-um-bom-design-para-a-criacao-de-dashboards-eficientes-no-excel/)
+- [Artigo de lista de acessibilidade para Tableau (inglês)](https://portal.lancaster.ac.uk/ask/checklist-tableau/)
 - [Comparativo de ferramentas de BI (2022)](https://www.reddit.com/r/PowerBI/comments/s3o6hi/the_most_indepth_comparison_of_bi_tools_followup/#lightbox)
 
 
