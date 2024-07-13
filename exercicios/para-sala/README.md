@@ -176,7 +176,9 @@ Em qualquer um dos três mapas do dashboard, selecione a setinha de mais opçõe
 ![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-22-adicionar-parametros.png "Figura 22")
 
 ### Exibição de Mapas dados aos parâmetros selecionados
-⚠️ Antes de mais nada, clique em alguma cidade do mapa cidade e garanta que o parâmetro **Parâmetro Cidade** esteja preenchido, isso garante que as regras de exibição sempre serão satisfeitas.
+⚠️ Antes de mais nada, clique em alguma cidade do mapa cidade e garanta que o parâmetro **Parâmetro Cidade** esteja preenchido, isso garante que as regras de exibição sempre serão satisfeitas. Caso isso não ocorra, preencha, por exemplo, o campo do país com **Brasil** selecione algum dos estados, e apague o parâmetro com Brasil.
+
+> Como poderíamos refatorar o código para que essa *gambiarra* não fosse necessária?
 
 Clique em cada um dos mapas e faça o seguinte processo, como ilustrado em cada imagem respectiva. No painel à esquerda clique em Layout, certifique-se do campo abaixo de item selecionado corresponde ao desejado, deixe marcado **Controlar a visibilidade usando valor** e selecione o campo correspondente ao item selecionado
 
@@ -198,6 +200,7 @@ Volte para planilha de Cidade e realize as seguintes ações
 
 #### Filtro
 Arraste o campo **Filtro Estado** para *Filtros* e deixe marcada apenas a opção **Verdadeiro**
+⚠️ Caso não esteja aparecendo o valor Verdadeiro E Falso, certifique-se que o parâmetro **Parâmetro Estado Selecionado** esteja preenchido no seu dashboard e tente novamente.
 
 #### Título
 Selecione *Editar Título* e usando o menu de seleção **Inserir** adicione o campo de parâmetro de estado selecionado. O código ficaria algo como:
