@@ -69,19 +69,117 @@ Teremos uma visualização como abaixo, agora é hora de alterar o tipo de cada 
 
 Após isso, criaremos agora o relacionamento entre as tabelas arraste a nova tabela lógica para o lado da tabela original.
 ![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-11-criar-relacionamento-entre-bases.png "Figura 11")
-*Figura 11: Instruções para criação de relacionamento entre fonte de dados. Clique em "Selecionar um campo" abaixo de cada fonte de dados. Selecione **Customer State** para a tabela original e **Estado** para a nova tabela. O operador permanece como **=***
+*Figura 11: Instruções para criação de relacionamento entre fonte de dados. Clique em "Selecionar um campo" abaixo de cada fonte de dados. Selecione **Customer State** para a tabela original e **Sigla** para a nova tabela. O operador permanece como **=***
 
 > 💡 Acabamos de combinar dados de diferentes tabelas. Esse processo também é chamado de *blend*. Podemos combinar várias fontes de dados e inclusive usar diversos campos para indicar o relacionamento entre elas. O paralelo disso em SQL seria o **JOIN**. Para mais detalhes: https://help.tableau.com/current/pro/desktop/pt-br/multiple_connections.htm
 Mais do que termos os dados de região, queremos que o Tableau identifique os estados, pois ele não identifica as siglas diretamente. Para saber mais de dados de mapas: https://www.tableau.com/pt-br/mapdata.
 
 > Vídeo curto de como criar uma mapa mostrando as regiões no Brasil
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8btsk1SSTMU/0.jpg)](https://www.youtube.com/watch?v=8btsk1SSTMU)
 ___________________________
 
 ## Parte 2 - Criando um gráfico de mapa com drill downs
 
-Criaremos 
+### Planilhas
 
+Criaremos três novas planilhas, nomeie-as como preferir (sugestão: País, Estado e Cidade).
 
+#### Planilha País
+1. Arraste o campo **País** na área da planilha onde se está "Solte o campo aqui"
+2. No painel de *Marcas*, troque a opção de **Automático** para **Mapa**
+3. Arraste o campo **Price**, que será agregado como soma, e também o campo **País** para **Rótulo** no painel de *Marcas*. Altere de *Contínuo* para *Discreto*. Em *Formatar número*, selecione **Moeda (padrão)**
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-12-planilha-pais.png "Figura 12")
 
+#### Planilha Estado
+1. Arraste o campo **País** na área da planilha onde se está "Solte o campo aqui"
+2. No painel de *Marcas*, troque a opção de **Automático** para **Mapa**
+3. Arraste o campo **Estado** para **Detalhe** no painel de *Marcas*
+4. Arraste o campo **Price**, que será agregado como soma, e também o campo **Sigla** para **Rótulo** no painel de *Marcas*. Altere de *Contínuo* para *Discreto*. Em *Formatar número*, selecione **Moeda (padrão)**
+5. Opcional: Arraste o campo **Região** para **Cores** no painel de *Marcas*
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-13-planilha-estado.png "Figura 13")
 
+#### Planilha Cidade
+1. Arraste o campo **País** na área da planilha onde se está "Solte o campo aqui"
+2. Arraste o campo **Estado** para **Detalhe** no painel de *Marcas*
+3. Arraste o campo **Customer City** para **Detalhe** no painel de *Marcas*
+4. Arraste o campo **Price**, que será agregado como soma, para **Rótulo** no painel de *Marcas*. Altere de *Contínuo* para *Discreto*. Em *Formatar número*, selecione **Moeda (padrão)**
+5. Opcional: Arraste o campo **Região** para **Cores** no painel de *Marcas*
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-14-planilha-cidade.png "Figura 14")
+
+Em qualquer uma das três planilhas arraste os campos: **Região**, **Sigla** e **Customer City** para a área de *Filtros*. Em cada um desses filtros clique com o botão direito e vá até a opção *Aplicar a planilhas* e selecione *Planilhas selecionadas...*. Selecione as outras duas planilhas e clique em Ok. Repita para os outros filtros.
+
+> Coloque a Opção de *Mostrar filtro* e brinque com a visualização
+
+### Parâmetros
+
+Clique com o botão direito no campo **Estado** e selecione a opção Criar > Parâmetro.
+Preencha como na imagem o **Parâmetro Estado**
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-15-parametro-estado.png "Figura 15")
+
+Aparecerá um novo painel chamado parâmetros no canto inferior esquerdo. Duplique o parâmetro recém-criado três vezes e renomeie (pela opção renomear, ou usando a tecla F2) para **Parâmetro Cidade**, **Parâmetro País** e **Parâmetro Estado Selecionado** (as opções são as mesmas para todos)
+
+### Campos Calculados
+
+Vamos criar quatro campos calculados (Análise > Criar campo calculado...), cada qual com a seguintes fórmulas:
+
+#### Visibilidade País
+`\[Customer City\]!=''
+AND
+\[Estado\]=''
+AND
+\[País\]=''`
+
+#### Visibilidade Estado
+`\[Customer City\]=''
+AND
+\[Estado\]=''
+AND
+\[País\]!=''`
+
+#### Visibilidade Cidade
+`\[Customer City\]=''
+AND
+\[Estado\]!=''
+AND
+\[País\]=''`
+
+#### Filtro Estado
+`\[Estado\]=\[Parâmetro Estado Selecionado\]`
+
+## Dashboard
+Criaremos nosso painel, ou dashboard, dê o nome que preferir. Arraste um **Contêiner vertical** para a área principal como na imagem abaixo.
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-16-conteiner.png "Figura 16")
+
+Dentro do contêiner, arraste as três planilhas: **País**, **Estado** e **Cidade**, uma abaixo da outra.
+
+### Ações de Parâmetros
+No menu superior, selecione *Painel > Ações*. Clique em *Adicionar ação* no menu suspenso inferior e clique em **Alterar parâmetro**, conforme figura abaixo. Repetiremos esse processo quatro vezes para cada um dos casos abaixo.
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-17-acao-parametro.png "Figura 17")
+
+#### Alterar Parâmetro de País
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-pais.png.png "Figura 18")
+
+#### Alterar Parâmetro de Estado
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-estado.png.png "Figura 19")
+
+#### Alterar Parâmetro de Cidade
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-cidade.png.png "Figura 20")
+
+#### Alterar Estado Selecionado
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets//parametro-estado-selecionado.png.png "Figura 22")
+
+Clique em OK para salvar.
+
+### Filtros na Planilha Cidade e Formatação de Título
+Volte para planilha de Cidade e realize as seguintes ações
+
+#### Filtro
+Arraste o campo **Filtro Estado** para *Filtros* e deixe marcada apenas a opção **Verdadeiro**
+
+#### Título
+Selecione *Editar Título* e deixe da seguinte maneira:
+`<Nome da planilha> | <Parâmetros.Parâmetro Estado Selecionado>`
+E clique em OK
+
+Volte para o Dashboard e divirta-se.
