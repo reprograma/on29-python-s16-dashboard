@@ -51,30 +51,36 @@ Por fim seu gráfico ficará semelhante à imagem abaixo. Agora brinque com sua 
 *Figura 7: Visualização de tempo de entrega com o gráfico de caixa.*
 ___________________________
 
+## Combinando fontes de dados diferentes
+
+Antes de começarmos, adicionaremos uma nova fonte de dados `estados_brasileiros.csv` disponibilizada na pasta de [material](https://github.com/reprograma/on29-python-s16-dashboard/tree/main/material)
+
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-8-nova-fonte-de-dados.png "Figura 8")
+*Figura 8: Instruções para adição de nova fonte de dados. Clique em "Fonte de dados" na parte inferior da tela, na parte superior direita clique no "+" ao lado de "Conexões".
+Abrirá uma janela "Conectar a dados", clique em "Fazer upload usando o computador" e selecione o arquivo csv de estados.*
+
+Aguarde carregar. Sob arquivos teremos **estados_brasileiros.csv** arraste-o para combinar*.
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-9-arrastar-arquivo-de-dados.png "Figura 9")
+*Figura 9: Instruções visuais de como arrastar o arquivo e para onde.*
+
+Teremos uma visualização como abaixo, agora é hora de alterar o tipo de cada campo, pois só estado foi reconhecido como função geográfica.
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-10-alterar-tipo-dado.png "Figura 10")
+*Figura 10: Instruções para alteração de tipo de dados. Clique na seta acima de cada campo ao lado de "Abc", para **País** selecione "Função geográfica" e **País/Região**, para **Sigla** selecione "Função geográfica", "Criar de" e selecione o campo **Estado**, para **Estado** selecione "Função geográfica" e **Estado/Província**, e para **Região** selecione "Função geográfica", "Criar de" e selecione o campo **Estado***
+
+Após isso, criaremos agora o relacionamento entre as tabelas arraste a nova tabela lógica para o lado da tabela original.
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-11-criar-relacionamento-entre-bases.png "Figura 11")
+*Figura 11: Instruções para criação de relacionamento entre fonte de dados. Clique em "Selecionar um campo" abaixo de cada fonte de dados. Selecione **Customer State** para a tabela original e **Estado** para a nova tabela. O operador permanece como **=***
+
+> 💡 Acabamos de combinar dados de diferentes tabelas. Esse processo também é chamado de *blend*. Podemos combinar várias fontes de dados e inclusive usar diversos campos para indicar o relacionamento entre elas. O paralelo disso em SQL seria o **JOIN**. Para mais detalhes: https://help.tableau.com/current/pro/desktop/pt-br/multiple_connections.htm
+Mais do que termos os dados de região, queremos que o Tableau identifique os estados, pois ele não identifica as siglas diretamente. Para saber mais de dados de mapas: https://www.tableau.com/pt-br/mapdata.
+
+> Vídeo curto de como criar uma mapa mostrando as regiões no Brasil
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8btsk1SSTMU?si=chnB_Sd_FwT3t9BV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+___________________________
+
 ## Parte 2 - Criando um gráfico de mapa com drill downs
 
-Criaremos outra planilha, nomeie como preferir. Em seguida, criaremos outro campo calculado que chamaremos de **Customer Region** (apenas para continuar com o padrão de nomenclatura), nele extrairemos a região do Brasil com base no estado. O código ficará assim:
-
-`CASE [Customer State]
-WHEN IN ("RS", "SC", "PR") THEN "Sul"
-WHEN IN ("SP", "RJ", "MG", "ES") THEN "Sudeste"
-WHEN IN ("GO", "MS", "DF", "MT") THEN "Centro-Oeste"
-WHEN IN ("AC", "AM", "RO", "RR", "PA","AP", "TO") THEN "Norte"
-ELSE "Nordeste"
-END`
-
-> CASE é uma função lógica que permite realizar vários testes condicionais em um conjunto de expressões dentro de uma única instrução
-
-Criaremos mais um campo calculado chamado **Customer Zip Code (inferred)**. O código ficará como:
-
-`RIGHT(STR(00000) + STR([Customer Zip Code Prefix]),5) +"000"`
-
-> 💡 Explore o arquivo CSV e veja que o CEP prefixo está como **número** e pode variar entre 4 a 5 dígitos. Isso acontece porque alguns dos CEPs de SP iniciam com zero. Como queremos que o Tableau identifique os CEPs como brasileiros, acrescentaremos "000" ao final para que assim fique com 8 dígitos.
-
-O resultado desse campo é uma *string* (cadeia de caracteres), mas queremos que ele seja interpretado como CEP, para isso modificaremos o tipo de dado.
-![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-8-alterar-tipo-dado.png "Figura 8")
-*Figura 8: Instruções para alteração de tipo de dado: Clique com o botão direito no campo recém criado, vá até "Função geográfica" e selecione a opção "CEP/Código Postal".*
-
+Criaremos 
 
 
 
