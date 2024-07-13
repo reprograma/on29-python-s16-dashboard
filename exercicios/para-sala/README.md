@@ -200,6 +200,7 @@ Volte para planilha de Cidade e realize as seguintes ações
 
 #### Filtro
 Arraste o campo **Filtro Estado** para *Filtros* e deixe marcada apenas a opção **Verdadeiro**
+
 ⚠️ Caso não esteja aparecendo o valor Verdadeiro E Falso, certifique-se que o parâmetro **Parâmetro Estado Selecionado** esteja preenchido no seu dashboard e tente novamente.
 
 #### Título
