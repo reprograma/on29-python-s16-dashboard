@@ -1,11 +1,11 @@
 # Exercício de Sala 🏫  
 
-## Nome do Exercicio
-
 ## Evoluindo nosso dashboard
 
 Para esse tutorial continuaremos a usar a base de dados do arquivo `base_final_s14_olist.csv` disponibilizada na pasta de [material](https://github.com/reprograma/on29-python-s16-dashboard/tree/main/material) 
 ___________________________
+
+## Iniciando
 
 Primeiro, faça uma nova publicação do dashboard desenvolvido na semana 15 por você *ou* faça uma cópia do dashboard disponibilizado pela Professora Mariana.
 https://public.tableau.com/app/profile/gabriela.nunes.turquetti/viz/S15-Reprograma-VisualizaodeDados/VisoGeral#1 
@@ -29,6 +29,7 @@ Vamos primeiramente criar uma nova planilha.
 Criaremos um **novo campo calculado**, chamado **Tempo de Entrega**, que retornará em **dias**, o tempo levado entre o pedido do cliente e a entrega. Para isso usaremos a seguinte função:
 `DATEDIFF('day', [Order Purchase Timestamp], [Order Delivered Customer Date])`
 > Você pode ver sobre as várias funções de datas disponíveis, além de outras, aqui: https://help.tableau.com/current/pro/desktop/pt-br/functions_functions_date.htm. 💡Lembre-se: a documentação é sempre sua melhor amiga. 
+
 ![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-3-campo-calculado.png "Figura 3")
 *Figura 3: Instruções de como criar um campo calculado. No menu vá em "Análise" e clique em "Criar campo calculado...". Abrirá uma nova janela, renomeie o campo para **Tempo de Entrega**, construa a função de data conforme descrito ou copie do código exibido acima.*
 
@@ -47,8 +48,32 @@ Ficaremos com a visualização abaixo. Note que a dimensão "Customer City" foi 
 
 Por fim seu gráfico ficará semelhante à imagem abaixo. Agora brinque com sua nova visualização, alterne entre linhas e colunas,adicione filtros, explore. Quais insights podemos tirar dessa visualização?
 ![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-7-visualizacao-final-boxplot.png "Figura 7")
-*Figura 6: Visualização de tempo de entrega com o gráfico de caixa.*
+*Figura 7: Visualização de tempo de entrega com o gráfico de caixa.*
+___________________________
 
+## Parte 2 - Criando um gráfico de mapa com drill downs
+
+Criaremos outra planilha, nomeie como preferir. Em seguida, criaremos outro campo calculado que chamaremos de **Customer Region** (apenas para continuar com o padrão de nomenclatura), nele extrairemos a região do Brasil com base no estado. O código ficará assim:
+
+`CASE [Customer State]
+WHEN IN ("RS", "SC", "PR") THEN "Sul"
+WHEN IN ("SP", "RJ", "MG", "ES") THEN "Sudeste"
+WHEN IN ("GO", "MS", "DF", "MT") THEN "Centro-Oeste"
+WHEN IN ("AC", "AM", "RO", "RR", "PA","AP", "TO") THEN "Norte"
+ELSE "Nordeste"
+END`
+
+> CASE é uma função lógica que permite realizar vários testes condicionais em um conjunto de expressões dentro de uma única instrução
+
+Criaremos mais um campo calculado chamado **Customer Zip Code (inferred)**. O código ficará como:
+
+`RIGHT(STR(00000) + STR([Customer Zip Code Prefix]),5) +"000"`
+
+> 💡 Explore o arquivo CSV e veja que o CEP prefixo está como **número** e pode variar entre 4 a 5 dígitos. Isso acontece porque alguns dos CEPs de SP iniciam com zero. Como queremos que o Tableau identifique os CEPs como brasileiros, acrescentaremos "000" ao final para que assim fique com 8 dígitos.
+
+O resultado desse campo é uma *string* (cadeia de caracteres), mas queremos que ele seja interpretado como CEP, para isso modificaremos o tipo de dado.
+![](https://raw.githubusercontent.com/reprograma/on29-python-s16-dashboard/main/assets/exercicio-sala-8-alterar-tipo-dado.png "Figura 8")
+*Figura 8: Instruções para alteração de tipo de dado: Clique com o botão direito no campo recém criado, vá até "Função geográfica" e selecione a opção "CEP/Código Postal".*
 
 
 
