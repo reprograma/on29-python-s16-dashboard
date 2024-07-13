@@ -2,7 +2,7 @@
   <img src="assets/reprograma-fundos-claros.png" alt="logo reprograma" width="500">
 </h1>
 
-# Tema da Aula
+# Dashboards com Tableau
 
 Turma Online On29 | Python | Semana 16 | 2024 | Professora [Michelli Silva](https://www.linkedin.com/in/michelli-silva/)
 
